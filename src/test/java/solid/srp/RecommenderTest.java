@@ -18,14 +18,4 @@ public class RecommenderTest {
         assertThat(BBDD.ET).isNotIn(recommendedMovies);
     }
 
-    @Test
-    void ReturnsRecommendedMoviesInCSVFormat() {
-        Recommender recommender = new Recommender();
-        Client client = new Client("John", BBDD.ET);
-        String expectedCSV = "Saving Private Ryan,War,Spielberg";
-
-        String moviesInCSVFormat = recommender.getRecommendedMoviesInCSVFormat(client);
-
-        assertThat(moviesInCSVFormat).isEqualTo(expectedCSV);
-    }
 }
