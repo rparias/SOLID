@@ -22,9 +22,10 @@ public class RecommenderTest {
     void ReturnsRecommendedMoviesInCSVFormat() {
         Recommender recommender = new Recommender();
         Client client = new Client("John", BBDD.ET);
+        List<Movie> recommendedMovies = recommender.getListOfRecommendedMoviesByDirector(client);
         String expectedCSV = "Saving Private Ryan,War,Spielberg";
 
-        String moviesInCSVFormat = recommender.getRecommendedMoviesInCSVFormat(client);
+        String moviesInCSVFormat = ExporterCSV.export(recommendedMovies);
 
         assertThat(moviesInCSVFormat).isEqualTo(expectedCSV);
     }

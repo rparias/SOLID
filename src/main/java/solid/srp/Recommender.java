@@ -15,10 +15,4 @@ public class Recommender {
 
         return recommendedMovies;
     }
-
-    public String getRecommendedMoviesInCSVFormat(Client client) {
-        return getListOfRecommendedMoviesByDirector(client).stream()
-                .map(movie -> (movie.getTitle() + "," + movie.getGenre() + "," + movie.getDirector()))
-                .collect(Collectors.joining("\n"));
-    }
 }
