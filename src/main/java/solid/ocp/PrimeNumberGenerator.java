@@ -5,7 +5,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class PrimeNumberGenerator {
+public abstract class PrimeNumberGenerator {
+
+    abstract Comparator<Integer> order();
 
     public List<Integer> generateNumbersUntil(int number) {
         List<Integer> generatedNumbers = new ArrayList<>();
@@ -14,10 +16,6 @@ public class PrimeNumberGenerator {
         }
         Collections.sort(generatedNumbers, order());
         return generatedNumbers;
-    }
-
-    private Comparator<Integer> order() {
-        return (a, b) -> a > b ? 1 : -1;
     }
 
     private boolean isPrime(int number) {

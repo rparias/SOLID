@@ -10,7 +10,7 @@ public class PrimeNumberGeneratorTest {
 
     @Test
     void returnsAListOfPrimeNumbersInAscendantOrderUntilTheInsertedNumber() {
-        PrimeNumberGenerator primeNumberGenerator = new PrimeNumberGenerator();
+        PrimeNumberGenerator primeNumberGenerator = new PrimeNumberGeneratorNaturalOrder();
         List<Integer> expected = Arrays.asList(2,3,5,7,11,13);
 
         List<Integer> generatedNumbers = primeNumberGenerator.generateNumbersUntil(15);
@@ -20,7 +20,7 @@ public class PrimeNumberGeneratorTest {
 
     @Test
     void returnsAListOfPrimeNumbersInDescendantOrderSinceTheInsertedNumberUntil2() {
-        PrimeNumberGenerator primeNumberGenerator = new PrimeNumberGenerator();
+        PrimeNumberGenerator primeNumberGenerator = new PrimeNumberGeneratorReverseOrder();
         List<Integer> expected = Arrays.asList(13,11,7,5,3,2);
 
         List<Integer> generatedNumbers = primeNumberGenerator.generateNumbersUntil(15);
