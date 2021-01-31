@@ -1,12 +1,12 @@
 package solid.dip;
 
-import solid.dip.data.StockRepository;
+import solid.dip.data.Stock;
 
 public class StockController {
 
-    private final StockRepository stockRepository;
+    private final Stock stockRepository;
 
-    public StockController(StockRepository stockRepository) {
+    public StockController(Stock stockRepository) {
         this.stockRepository = stockRepository;
     }
 
